@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>UrbanClap Clone — HTML & CSS</title>
   <meta name="description" content="A CSS-only clone template of UrbanClap / Urban Company features." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="urbanclap_css.css" />
 </head>
 <body>
   <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode" />
@@ -22,17 +22,21 @@
 
       <nav class="nav" aria-label="Main navigation">
         <div class="theme-toggle-wrapper">
-          <span class="muted" id="theme-label">Dark</span>
+          <span class="muted" id="theme-label">Light</span>
           <label for="theme-toggle" class="toggle-label" aria-labelledby="theme-label"></label>
         </div>
         <a class="ghost" href="#become-pro">Become a pro</a>
-        <a class="ghost" href="#login">Login</a>
+        <a class="ghost" href="login.html">Login</a>
         <a class="btn" href="#app">Get the app</a>
       </nav>
     </div>
   </header>
 
   <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-background">
+      <img src="https://images.unsplash.com/photo-1581578731548-c6a0c3f917f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Professional home services" class="hero-bg-image" />
+      <div class="hero-overlay"></div>
+    </div>
     <div class="hero-inner">
       <div class="hero-copy">
         <h1 id="hero-heading">Home services, local pros — booked in minutes</h1>
@@ -60,9 +64,9 @@
 
         <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap" role="list" aria-label="Popular services">
           <span class="muted" style="padding:10px 0">Popular:</span>
-          <a class="ghost" href="#home-cleaning" role="listitem">Home cleaning</a>
-          <a class="ghost" href="#ac-repair" role="listitem">AC repair</a>
-          <a class="ghost" href="#salon" role="listitem">Salon at home</a>
+          <a class="ghost" href="#home-cleaning" role="listitem" onclick="scrollToService('home')">Home cleaning</a>
+          <a class="ghost" href="#ac-repair" role="listitem" onclick="scrollToService('repair')">AC repair</a>
+          <a class="ghost" href="#salon" role="listitem" onclick="scrollToService('beauty')">Salon at home</a>
         </div>
       </div>
 
@@ -100,7 +104,9 @@
 
     <div class="services-container">
       <article class="service" data-category="repair" tabindex="0" role="button">
-        <div class="icon" aria-hidden="true">EL</div>
+        <div class="icon" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Electrician" />
+        </div>
         <div>
           <h4>Electrician</h4>
           <p>Wiring, fittings, fan/fixture installation & repairs</p>
@@ -108,7 +114,9 @@
       </article>
 
       <article class="service" data-category="repair" tabindex="0" role="button">
-        <div class="icon" aria-hidden="true">PL</div>
+        <div class="icon" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Plumber" />
+        </div>
         <div>
           <h4>Plumber</h4>
           <p>Leaky taps, blocked drains, geyser repair</p>
@@ -116,7 +124,9 @@
       </article>
 
       <article class="service" data-category="home" tabindex="0" role="button">
-        <div class="icon" aria-hidden="true">CL</div>
+        <div class="icon" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Home Cleaning" />
+        </div>
         <div>
           <h4>Home Cleaning</h4>
           <p>Full home, deep clean, kitchen & bathroom specialized</p>
@@ -124,7 +134,9 @@
       </article>
 
       <article class="service" data-category="repair" tabindex="0" role="button">
-        <div class="icon" aria-hidden="true">AC</div>
+        <div class="icon" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="AC Service" />
+        </div>
         <div>
           <h4>AC Service</h4>
           <p>Split & Window — gas top-up, cleaning, repairing</p>
@@ -132,7 +144,9 @@
       </article>
 
       <article class="service" data-category="beauty" tabindex="0" role="button">
-        <div class="icon" aria-hidden="true">SL</div>
+        <div class="icon" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Salon at Home" />
+        </div>
         <div>
           <h4>Salon at Home</h4>
           <p>Hair, makeup, grooming & spa</p>
@@ -140,7 +154,9 @@
       </article>
 
       <article class="service" data-category="repair" tabindex="0" role="button">
-        <div class="icon" aria-hidden="true">AP</div>
+        <div class="icon" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Appliance Repair" />
+        </div>
         <div>
           <h4>Appliance Repair</h4>
           <p>Fridge, washing machine, microwave repairs</p>
@@ -165,8 +181,8 @@
 
     <div class="cards" role="list">
       <article class="card" role="listitem">
-        <div class="media" role="img" aria-label="Professional photo placeholder - loading">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><rect width='100%25' height='100%25' fill='%23e6f2ff'/><text x='50%25' y='50%25' alignment-baseline='middle' text-anchor='middle' font-size='20' fill='%230b1220'>Pro Photo</text></svg>" alt="Amit Kumar professional photo" />
+        <div class="media" role="img" aria-label="Amit Kumar professional photo">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Amit Kumar professional photo" />
         </div>
         <div>
           <div class="meta">
@@ -185,8 +201,8 @@
       </article>
 
       <article class="card" role="listitem">
-        <div class="media" role="img" aria-label="Professional photo placeholder - loading">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><rect width='100%25' height='100%25' fill='%23fff1f1'/><text x='50%25' y='50%25' alignment-baseline='middle' text-anchor='middle' font-size='20' fill='%230b1220'>Pro Photo</text></svg>" alt="Sneha Sharma professional photo" />
+        <div class="media" role="img" aria-label="Sneha Sharma professional photo">
+          <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sneha Sharma professional photo" />
         </div>
         <div>
           <div class="meta">
@@ -205,8 +221,8 @@
       </article>
 
       <article class="card" role="listitem">
-        <div class="media" role="img" aria-label="Professional photo placeholder - loading">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><rect width='100%25' height='100%25' fill='%23f1fff0'/><text x='50%25' y='50%25' alignment-baseline='middle' text-anchor='middle' font-size='20' fill='%230b1220'>Pro Photo</text></svg>" alt="Rahul Verma professional photo" />
+        <div class="media" role="img" aria-label="Rahul Verma professional photo">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Rahul Verma professional photo" />
         </div>
         <div>
           <div class="meta">
@@ -324,6 +340,23 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function scrollToService(category) {
+      // Find the appropriate filter radio button and check it
+      const filterId = 'filter-' + category;
+      const filterRadio = document.getElementById(filterId);
+      if (filterRadio) {
+        filterRadio.checked = true;
+      }
+      
+      // Scroll to the services section
+      const servicesSection = document.querySelector('.services-wrapper');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
 
 </body>
 </html>
