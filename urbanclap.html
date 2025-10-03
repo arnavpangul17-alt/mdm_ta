@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UrbanClap Clone — HTML & CSS</title>
+  <meta name="description" content="A CSS-only clone template of UrbanClap / Urban Company features." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode" />
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="#" class="brand" aria-label="UrbanClone home">
+        <div class="logo" aria-hidden="true">UC</div>
+        <div>
+          <div>Urban<span style="color:var(--brand)">Clone</span></div>
+          <div class="muted tagline" style="font-size:12px">Services at your doorstep</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <div class="theme-toggle-wrapper">
+          <span class="muted" id="theme-label">Dark</span>
+          <label for="theme-toggle" class="toggle-label" aria-labelledby="theme-label"></label>
+        </div>
+        <a class="ghost" href="#become-pro">Become a pro</a>
+        <a class="ghost" href="#login">Login</a>
+        <a class="btn" href="#app">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-heading">Home services, local pros — booked in minutes</h1>
+        <p class="sub">Electricians, cleaners, beauty at home, appliance repair and more — compare prices & reviews.</p>
+
+        <form class="search-card" role="search" aria-label="Search for services">
+          <label for="service-search" class="sr-only">Search service or professional</label>
+          <input 
+            id="service-search" 
+            type="search" 
+            placeholder="Search service or professional (e.g. plumber, electrician)" 
+            aria-label="Search services" 
+          />
+          
+          <label for="location-select" class="sr-only">Choose location</label>
+          <select id="location-select" aria-label="Choose location">
+            <option>Choose city / pincode</option>
+            <option>New Delhi</option>
+            <option>Mumbai</option>
+            <option>Bengaluru</option>
+          </select>
+          
+          <button type="submit" class="btn">Search</button>
+        </form>
+
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap" role="list" aria-label="Popular services">
+          <span class="muted" style="padding:10px 0">Popular:</span>
+          <a class="ghost" href="#home-cleaning" role="listitem">Home cleaning</a>
+          <a class="ghost" href="#ac-repair" role="listitem">AC repair</a>
+          <a class="ghost" href="#salon" role="listitem">Salon at home</a>
+        </div>
+      </div>
+
+      <aside aria-label="Booking benefits">
+        <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)">
+          <h3 style="margin:0 0 10px">Instant Booking</h3>
+          <p class="muted" style="margin:0 0 14px">Pick a service, choose a slot, confirm — no app needed.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <div style="flex:1;min-width:120px;background:linear-gradient(180deg,#fff7e8,#fff);padding:12px;border-radius:10px;text-align:center">24/7 Support</div>
+            <div style="flex:1;min-width:120px;background:linear-gradient(180deg,#e8fff4,#fff);padding:12px;border-radius:10px;text-align:center">Verified pros</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="services-wrapper" aria-labelledby="services-title">
+    <div style="max-width:1100px;margin:0 auto;padding:0 18px 16px">
+      <h2 id="services-title" style="margin-bottom:16px">Popular categories</h2>
+      
+      <div class="filter-tabs" role="tablist" aria-label="Filter services by category">
+        <input type="radio" name="filter" id="filter-all" checked />
+        <label for="filter-all" role="tab" aria-selected="true">All</label>
+        
+        <input type="radio" name="filter" id="filter-home" />
+        <label for="filter-home" role="tab">Home</label>
+        
+        <input type="radio" name="filter" id="filter-repair" />
+        <label for="filter-repair" role="tab">Repair</label>
+        
+        <input type="radio" name="filter" id="filter-beauty" />
+        <label for="filter-beauty" role="tab">Beauty</label>
+      </div>
+    </div>
+
+    <div class="services-container">
+      <article class="service" data-category="repair" tabindex="0" role="button">
+        <div class="icon" aria-hidden="true">EL</div>
+        <div>
+          <h4>Electrician</h4>
+          <p>Wiring, fittings, fan/fixture installation & repairs</p>
+        </div>
+      </article>
+
+      <article class="service" data-category="repair" tabindex="0" role="button">
+        <div class="icon" aria-hidden="true">PL</div>
+        <div>
+          <h4>Plumber</h4>
+          <p>Leaky taps, blocked drains, geyser repair</p>
+        </div>
+      </article>
+
+      <article class="service" data-category="home" tabindex="0" role="button">
+        <div class="icon" aria-hidden="true">CL</div>
+        <div>
+          <h4>Home Cleaning</h4>
+          <p>Full home, deep clean, kitchen & bathroom specialized</p>
+        </div>
+      </article>
+
+      <article class="service" data-category="repair" tabindex="0" role="button">
+        <div class="icon" aria-hidden="true">AC</div>
+        <div>
+          <h4>AC Service</h4>
+          <p>Split & Window — gas top-up, cleaning, repairing</p>
+        </div>
+      </article>
+
+      <article class="service" data-category="beauty" tabindex="0" role="button">
+        <div class="icon" aria-hidden="true">SL</div>
+        <div>
+          <h4>Salon at Home</h4>
+          <p>Hair, makeup, grooming & spa</p>
+        </div>
+      </article>
+
+      <article class="service" data-category="repair" tabindex="0" role="button">
+        <div class="icon" aria-hidden="true">AP</div>
+        <div>
+          <h4>Appliance Repair</h4>
+          <p>Fridge, washing machine, microwave repairs</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="providers-wrap" aria-labelledby="providers-title">
+    <div class="bar">
+      <div class="muted" id="providers-title">Showing <strong>120</strong> pros near you</div>
+      <div class="ml-auto" style="display:flex;gap:10px;flex-wrap:wrap">
+        <label for="sort-select" class="sr-only">Sort professionals</label>
+        <select id="sort-select" aria-label="Sort professionals">
+          <option>Sort: Popular</option>
+          <option>Rating</option>
+          <option>Price low to high</option>
+        </select>
+        <button class="ghost">Filter</button>
+      </div>
+    </div>
+
+    <div class="cards" role="list">
+      <article class="card" role="listitem">
+        <div class="media" role="img" aria-label="Professional photo placeholder - loading">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><rect width='100%25' height='100%25' fill='%23e6f2ff'/><text x='50%25' y='50%25' alignment-baseline='middle' text-anchor='middle' font-size='20' fill='%230b1220'>Pro Photo</text></svg>" alt="Amit Kumar professional photo" />
+        </div>
+        <div>
+          <div class="meta">
+            <div>
+              <div class="name">Amit Kumar</div>
+              <div class="muted" style="font-size:13px">Electrician • 6 yrs exp</div>
+            </div>
+            <div class="rating" aria-label="Rating 4.8 stars">4.8 ★</div>
+          </div>
+          <p class="muted" style="margin:10px 0 0;">Serves within 10km • Govt ID verified</p>
+          <div class="cta" style="margin-top:12px">
+            <button class="ghost">View profile</button>
+            <label for="book-toggle" class="btn book" tabindex="0" role="button">Book</label>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" role="listitem">
+        <div class="media" role="img" aria-label="Professional photo placeholder - loading">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><rect width='100%25' height='100%25' fill='%23fff1f1'/><text x='50%25' y='50%25' alignment-baseline='middle' text-anchor='middle' font-size='20' fill='%230b1220'>Pro Photo</text></svg>" alt="Sneha Sharma professional photo" />
+        </div>
+        <div>
+          <div class="meta">
+            <div>
+              <div class="name">Sneha Sharma</div>
+              <div class="muted" style="font-size:13px">Home Cleaner • 4 yrs exp</div>
+            </div>
+            <div class="rating" aria-label="Rating 4.7 stars">4.7 ★</div>
+          </div>
+          <p class="muted" style="margin:10px 0 0;">Uses eco-friendly products</p>
+          <div class="cta" style="margin-top:12px">
+            <button class="ghost">View profile</button>
+            <label for="book-toggle" class="btn book" tabindex="0" role="button">Book</label>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" role="listitem">
+        <div class="media" role="img" aria-label="Professional photo placeholder - loading">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><rect width='100%25' height='100%25' fill='%23f1fff0'/><text x='50%25' y='50%25' alignment-baseline='middle' text-anchor='middle' font-size='20' fill='%230b1220'>Pro Photo</text></svg>" alt="Rahul Verma professional photo" />
+        </div>
+        <div>
+          <div class="meta">
+            <div>
+              <div class="name">Rahul Verma</div>
+              <div class="muted" style="font-size:13px">AC Technician • 8 yrs exp</div>
+            </div>
+            <div class="rating" aria-label="Rating 4.9 stars">4.9 ★</div>
+          </div>
+          <p class="muted" style="margin:10px 0 0;">Includes warranty on parts</p>
+          <div class="cta" style="margin-top:12px">
+            <button class="ghost">View profile</button>
+            <label for="book-toggle" class="btn book" tabindex="0" role="button">Book</label>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <input type="checkbox" id="book-toggle" />
+  <div class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Booking panel">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <h3 style="margin:0">Book a professional</h3>
+          <div class="muted" style="font-size:13px">Confirm service, slot and pay</div>
+        </div>
+        <label for="book-toggle" class="ghost" style="cursor:pointer">Close</label>
+      </div>
+
+      <form style="margin-top:16px;display:grid;gap:12px">
+        <label for="service-type" class="muted">Service</label>
+        <select id="service-type">
+          <option>Home Cleaning — Standard</option>
+          <option>AC Service — Split (Gas not included)</option>
+        </select>
+        
+        <div class="form-row">
+          <div>
+            <label for="booking-date" class="muted">Date</label>
+            <input type="date" id="booking-date" />
+          </div>
+          <div>
+            <label for="time-slot" class="muted">Time slot</label>
+            <select id="time-slot">
+              <option>10:00 - 12:00</option>
+              <option>12:00 - 14:00</option>
+              <option>17:00 - 19:00</option>
+            </select>
+          </div>
+        </div>
+        
+        <label for="address" class="muted">Address</label>
+        <input type="text" id="address" placeholder="Flat / House, Building, Locality" />
+
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <button type="button" class="ghost" style="flex:1">Save as draft</button>
+          <button type="submit" class="btn" style="flex:1">Confirm & Pay</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <section class="how" aria-labelledby="how-title">
+    <div>
+      <h3 id="how-title">How it works</h3>
+      <div class="steps">
+        <div class="step"><strong>1.</strong> Choose a service and preferred time</div>
+        <div class="step"><strong>2.</strong> Choose a verified pro & view price breakdown</div>
+        <div class="step"><strong>3.</strong> Confirm booking and pay (card / UPI)</div>
+      </div>
+    </div>
+    <aside>
+      <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)">
+        <h4>Featured plans</h4>
+        <ul class="muted" style="padding-left:20px">
+          <li>Basic: One-time visit</li>
+          <li>Monthly: Recurring clean-up</li>
+          <li>Annual Maintenance: For appliances</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="testimonials" aria-labelledby="testimonials-title">
+    <h3 id="testimonials-title">What customers say</h3>
+    <div class="slider">
+      <div class="slides" aria-live="polite">
+        <div class="slide">
+          <p>"Quick, professional and affordable — got my AC fixed in 2 hours."</p>
+          <div class="muted">— Meera K.</div>
+        </div>
+        <div class="slide">
+          <p>"The cleaner arrived on time and did a fantastic job."</p>
+          <div class="muted">— Raj P.</div>
+        </div>
+        <div class="slide">
+          <p>"Transparent pricing and easy refund when needed."</p>
+          <div class="muted">— Sunita S.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div>
+        <strong>UrbanClone</strong>
+        <div class="muted">© 2025 • Demo template</div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <a class="muted" href="#about">About</a>
+        <a class="muted" href="#terms">Terms</a>
+        <a class="muted" href="#help">Help</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
